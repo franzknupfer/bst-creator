@@ -3,7 +3,13 @@ export default class BST {
     this.root = null;
   }
 
-  insertNode(node) {
-    this.root = node;
+  insert(node) {
+    if (this.root === null) {
+      this.root = node;
+    } else if (this.root > node) {
+      this.root.left = node;
+    } else if (this.root < node) {
+      this.root.right = node;
+    }
   }
 }
